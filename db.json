@@ -1,0 +1,56 @@
+{
+  "employees": [
+    {
+      "id": "vvv1323",
+      "name": "John Doe",
+      "department": "Engineering",
+      "status": "OFFBOARDED",
+      "email": "some.email@wp.pl",
+      "equipments": [
+        {
+          "id": "aaa12345678",
+          "name": "Macbook air"
+        },
+        {
+          "id": "aaa123456",
+          "name": "Magic Mouse"
+        }
+      ]
+    }
+  ],
+  "offboardings": [
+    {
+      "address": {
+        "streetLine1": "Street",
+        "country": "Poland",
+        "postalCode": "12-123",
+        "receiver": "John Doe"
+      },
+      "notes": "my note",
+      "phone": "123123123",
+      "email": "test@example.com"
+    },
+    {
+      "address": {
+        "streetLine1": "Street",
+        "country": "Poland",
+        "postalCode": "12-123",
+        "receiver": "John Doe"
+      },
+      "notes": "my notes",
+      "phone": "123123123",
+      "email": "test@example.com"
+    },
+    {
+      "address": {
+        "streetLine1": "Street 1",
+        "country": "Poland",
+        "postalCode": "12-123",
+        "receiver": "John Doe"
+      },
+      "notes": "My notes",
+      "phone": "123123123",
+      "email": "test@example.com"
+    }
+  ]
+}

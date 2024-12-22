@@ -1,0 +1,37 @@
+<form [formGroup]="form" (ngSubmit)="handleSubmit()">
+  <h2 mat-dialog-title>Offboard</h2>
+  <mat-dialog-content>
+    <mat-form-field appearance="outline">
+      <mat-label>Street line</mat-label>
+      <input matInput [formControl]="form.controls.address.controls.streetLine1"/>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Country</mat-label>
+      <input matInput [formControl]="form.controls.address.controls.country"/>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Postal code</mat-label>
+      <input matInput [formControl]="form.controls.address.controls.postalCode"/>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Receiver</mat-label>
+      <input matInput [formControl]="form.controls.address.controls.receiver"/>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Notes</mat-label>
+      <textarea matInput [formControl]="form.controls.notes"></textarea>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Phone</mat-label>
+      <input matInput [formControl]="form.controls.phone"/>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput [formControl]="form.controls.email"/>
+    </mat-form-field>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button (click)="handleCancel()">Cancel</button>
+    <button mat-button type="submit">Offboard</button>
+  </mat-dialog-actions>
+</form>

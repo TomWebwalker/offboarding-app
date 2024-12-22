@@ -1,0 +1,47 @@
+:host {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+mat-spinner {
+  margin: auto;
+}
+
+h4 {
+  padding-left: 12px;
+  margin-bottom: 16px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+
+  td {
+    padding: 8px 12px;
+  }
+
+  td:first-child {
+    width: 100px;
+    font-weight: lighter;
+  }
+
+  td:last-child {
+    font-weight: bold;
+  }
+
+  tr:nth-child(odd) {
+    background-color: #f2f2f2;
+  }
+}
+
+mat-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end
+}

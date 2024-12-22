@@ -1,0 +1,25 @@
+<table mat-table [dataSource]="employees()">
+
+  @for (column of columns; track column.key) {
+    <ng-container [matColumnDef]="column.key">
+      <th mat-header-cell *matHeaderCellDef>{{ column.header }}</th>
+      <td mat-cell *matCellDef="let entry">
+        @if (column.cell) {
+          {{ column.cell(entry) }}
+        } @else {
+          {{ entry[column.key] }}
+        }
+      </td>
+    </ng-container>
+  }
+
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef>Actions</th>
+    <td mat-cell *matCellDef="let entry">
+      <a mat-flat-button [routerLink]="['/', 'employees', entry.id]">Details</a>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

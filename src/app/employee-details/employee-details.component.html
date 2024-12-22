@@ -1,0 +1,57 @@
+<div>
+  <a routerLink="/" mat-button>< Back</a>
+</div>
+@if (employee(); as employee) {
+  <mat-card appearance="outlined">
+    <mat-card-content>
+      <div>
+        <h4>Personal details</h4>
+        <table>
+          <tr>
+            <td>ID</td>
+            <td>{{ employee.id }}</td>
+          </tr>
+          <tr>
+            <td>Name</td>
+            <td>{{ employee.name }}</td>
+          </tr>
+          <tr>
+            <td>Email</td>
+            <td>{{ employee.email }}</td>
+          </tr>
+          <tr>
+            <td>Department</td>
+            <td>{{ employee.department }}</td>
+          </tr>
+        </table>
+      </div>
+
+      <div>
+        <h4>Equipments</h4>
+        <mat-chip-set aria-label="Equipments">
+          @for (equipment of employee.equipments; track equipment.id) {
+            <mat-chip>{{ equipment.name }}</mat-chip>
+          }
+        </mat-chip-set>
+      </div>
+
+      @if (employee.status === 'ACTIVE') {
+        <div class="actions">
+          <button mat-flat-button (click)="handleShowOffBoardModal()">Off-board</button>
+        </div>
+      }
+    </mat-card-content>
+  </mat-card>
+}
+
+@if (isLoading()) {
+  <mat-spinner/>
+}
+
+@if (error(); as error) {
+  <mat-card appearance="outlined" class="error">
+    <mat-card-content>
+      {{ error.msg }}
+    </mat-card-content>
+  </mat-card>
+}

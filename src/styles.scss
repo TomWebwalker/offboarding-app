@@ -1,1 +1,41 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+@use 'sass:map';
+
+
+html {
+  @include mat.theme((
+    color: (
+      theme-type: light,
+      primary: mat.$blue-palette,
+      tertiary: mat.$orange-palette,
+    ),
+    typography: Roboto,
+    density: 0,
+  ));
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+:root {
+  @include mat.toolbar-overrides((
+    container-background-color: map.get(mat.$blue-palette, 50),
+    container-text-color: white,
+  ));
+}
+
+h2, h3, h4 {
+  margin: 0;
+}
+
+
+h4 {
+  border-bottom: 1px solid map.get(mat.$blue-palette, 50);
+  padding-bottom: 8px;
+}
+
+mat-card.error {
+  background-color: var(--mat-sys-error-container);
+  color: var(--mat-sys-on-error-container);
+}
+

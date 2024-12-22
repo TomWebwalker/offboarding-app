@@ -1,0 +1,14 @@
+<h2>Employees</h2>
+<div>
+  <app-dashboard-search-bar
+    [(nameToFilter)]="nameToFilter"
+    [(departmentToFilter)]="departmentToFilter"
+  />
+  <mat-card appearance="outlined">
+    <mat-card-content>
+      <app-employees-table
+        [employees]="employees()"
+      />
+    </mat-card-content>
+  </mat-card>
+</div>
